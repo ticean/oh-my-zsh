@@ -95,6 +95,13 @@ function git_prompt_info() {
   echo "$ZSH_THEME_GIT_PROMPT_PREFIX$(parse_git_dirty)${ref#refs/heads/}$ZSH_THEME_GIT_PROMPT_SUFFIX"
 }
 
+# rbenv_prompt_info ()
+# --------------------
+# Display rbenv info.
+function rbenv_prompt_info() {
+  #echo "$ZSH_THEME_RBENV_PROMPT_PREFIX$(rbenv_prompt_info)$ZSH_THEME_RBENV_PROMPT_SUFFIX"
+}
+
 # gnosis_shlvl ()
 # ---------------
 # Show the value of $SHLVL if it is greater than 1.
@@ -124,7 +131,7 @@ function gnosis_stopped_jobs {
 # Note that the function calls are escaped, because we don't want
 # to call them right now, but every time the prompt is displayed!
 GNOSIS_LEFT="$GNOSIS_PREFIX1$GNOSIS_C1%n%{$reset_color%}@$GNOSIS_C1%m$GNOSIS_SEP"
-GNOSIS_RIGHT=" \$(git_prompt_ahead)\$(git_prompt_status)\$(parse_git_dirty)\$(git_prompt_info)%{$reset_color%}\$(git_prompt_short_sha)\$ZSH_THEME_RBENV_PROMPT_PREFIX\$(rbenv_prompt_info)\$ZSH_THEME_RBENV_PROMPT_SUFFIX"
+GNOSIS_RIGHT=" \$(git_prompt_ahead)\$(git_prompt_status)\$(parse_git_dirty)\$(git_prompt_info)%{$reset_color%}\$(git_prompt_short_sha)\$(rbenv_prompt_info)"
 
 # Main prompt
 # -----------
