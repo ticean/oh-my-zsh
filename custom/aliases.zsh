@@ -21,3 +21,9 @@ alias clearcloudhosts="sed '/amazonaws/d' ~/.ssh/known_hosts > /tmp/kh && mv /tm
 alias pubkey="more ~/.ssh/id_dsa.pub | xclip -sel clip | echo '=> Public key copied to pasteboard.'"
 
 #alias spark="~/bin/spark/spark"
+
+alias diclean='docker rmi $(docker images -q --filter "dangling=true")'
+alias dclean='docker ps -a | grep -v '\''CONTAINER\|config\|data\|run'\'' | cut -c-12 | xargs docker rm'
+
+alias compose='docker-compose'
+alias fig='docker-compose'
