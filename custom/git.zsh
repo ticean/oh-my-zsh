@@ -1,5 +1,7 @@
 alias gbd='git branch -d'
 alias gcob='git checkout -b'
+alias gd='git diff'
+alias gds='git diff --staged'
 alias gl='git lg'
 alias gs='git status'
 alias gref='git reflog'
